@@ -1,0 +1,29 @@
+
+<h1>Raffler</h1>
+
+
+
+	
+	<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.0.5/angular-resource.js"></script>
+    <script src="script.js"></script>
+    
+  </head>
+	
+<div ng-controller="RaffleCtrl">
+
+<form ng-submit="addEntry()">
+	<input type="text" ng-model="newEntry.name">
+	<input type="submit" value="Add">
+</form>
+{{newEntry.name}}
+
+	<ul>
+		<li ng-repeat="entry in entries">
+			{{entry.name}}
+			<span ng-show="entry.winner" class="winner">WINNER</span>
+		</li>
+	</ul>
+</div>
+
